@@ -120,21 +120,12 @@ zero.addEventListener("click", () => {
 })
 
 
-let num1; //introduced to test run splice()
 
 sum.addEventListener("click", () => {
-
-    firstNumber = display.splice(0, display.length).join("");
-    let num1 = Number(firstNumber);
-    console.log(typeof num1);
-    console.log(typeof firstNumber);
-    console.log(typeof operator);
-    //firstNumber = display.pop;
+    firstNumber = display.pop();
     display.push("+");
     operator = display.pop();
-    console.log(firstNumber);
-    console.log(operator);
-    console.log(display);
+
 })
 
 minus.addEventListener("click", () => {
@@ -156,18 +147,10 @@ division.addEventListener("click", () => {
 })
 
 
-let num2;//introduced to test run splice()
 
 equal.addEventListener("click", () => {
-    //secondNumber = display.pop();
-    secondNumber = display.splice(0, display.length).join("");
-    let num2 = Number(secondNumber);
-    console.log(typeof num2);
-    console.log(typeof firstNumber);
-
-    console.log(num2);
-    result = operate(operator, num1, num2);
-    console.log(result);
+    secondNumber = display.pop();
+    result = operate(operator, firstNumber, secondNumber);
     input.value = result;
 })
 
